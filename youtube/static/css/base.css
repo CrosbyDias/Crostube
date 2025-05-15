@@ -1,0 +1,40 @@
+/* static/css/login_user.css */
+
+ body {
+            font-family: 'Inter', sans-serif;
+        }
+        .navbar-brand {
+            font-weight: 600; /* Medium font weight for the brand */
+            transition: color 0.3s ease; /* Smooth transition for color change on hover */
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #ff6600; /* Highlight on hover and active */
+            transform: translateY(-2px); /* Slight upward movement on hover/active */
+        }
+
+        .navbar-brand {
+            margin-right: 1rem; /* Add space after the brand */
+        }
+        .nav-list {
+            display: flex; /* Use flexbox for the nav list */
+            flex-direction: row; /* Horizontal layout for nav items */
+            margin-right: 0; /* Remove default margin-right */
+            padding-left: 0; /* Remove default padding */
+            margin-bottom: 0;
+        }
+        .nav-item {
+            margin-left: 1rem; /* Add space between nav items */
+            margin-right: 1rem; /* Add space between nav items */
+            list-style: none; /* Remove list style */
+
+        }
+        .search-form {
+            display: flex; /* Use flexbox for search form */
+            margin-right: 6rem; /* Add space before upload/login */
+            width: 50%; /* Full width for search form */
+        }
+
+        .upload-login {
+            display: flex;
+            align-items: center;
+        }

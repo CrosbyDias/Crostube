@@ -10,10 +10,10 @@ def login_user(request):
         user = authenticate(request , username=username, password=password)
         if user is not None:
             login(request, user)
-            return render(request, 'auth_user/success.html')
+            return render(request, 'main/home.html', {'user': user})
         else:
-            return render(request, 'auth_user/login.html', {'error': 'Invalid username or password'})
-    return render(request, 'auth_user/login_user.html')  
+            return render(request, 'auth_user/login_user.html', {'error': 'Invalid username or password'})
+    return render(request, 'main/home.html')  
 
 def logout_user(request):
     logout(request)
