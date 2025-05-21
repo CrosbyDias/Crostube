@@ -1,6 +1,6 @@
  <nav class="navbar navbar-expand-lg bg-dark shadow-sm">
     <div class="container-fluid">
-        <a class="navbar-brand text-primary" href="#">CROSTUBE</a>
+        <a class="navbar-brand text-primary" href="{%url 'home'%}">CROSTUBE</a>
 
         <form class="search-form" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -9,7 +9,7 @@
         <div class="upload-login">
             <ul class="navbar-nav d-flex flex-row ">
                 <li class="nav-item me-2">
-                    <a class="nav-link text-black" href="#">Upload</a>
+                    <a class="nav-link text-black" href="{%url 'upload_video'%}">Upload</a>
                 </li>
                 <li class="nav-item">
                     <button type="button"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"> Login</button>

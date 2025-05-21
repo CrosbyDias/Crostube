@@ -1,0 +1,109 @@
+{% extends "chill/base.html" %}
+{% load static %}
+{% block title %}upload{% endblock %}
+
+{% block extra_head %}
+ 
+{% endblock %}
+
+
+
+ {% block content %}
+ <style>
+   body {
+            background-color: #212529; /* Dark background */
+            color: #f8f9fa; /* Light text */
+        }
+
+        .form-container {
+            background-color: #343a40; /* Darker form background */
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 50px;
+            box-shadow: 0 0 10px rgba(255, 255, 0, 0.1); /* Subtle yellow shadow */
+        }
+
+        .form-label {
+            color: #f8f9fa;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-control {
+            background-color: #495057;
+            color: #f8f9fa;
+            border: 1px solid #6c757d;
+        }
+
+        .form-control:focus {
+            background-color: #495057;
+            color: #f8f9fa;
+            border-color: #ffc107; /* Yellow focus border */
+            box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25); /* Yellow focus shadow */
+        }
+
+        .btn-primary {
+            background-color: #ffc107; /* Yellow primary button */
+            border-color: #ffc107;
+            color: #212529; /* Dark text on yellow button */
+            font-weight: bold;
+        }
+
+        .btn-primary:hover {
+            background-color: #e0a800;
+            border-color: #d39e00;
+        }
+
+        .btn-primary:focus {
+            box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.5); /* Yellow focus shadow */
+        }
+
+        h1 {
+            color: #f8f9fa;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 form-container">
+                <h1>Upload a Video</h1>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title:</label>
+                        <input type="text" class="form-control" id="title" name="title" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description:</label>
+                        <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="uploaded_by" class="form-label">Uploaded By:</label>
+                        <input type="text" class="form-control" id="uploaded_by" name="uploaded_by" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="video_file" class="form-label">Video File (.mp4):</label>
+                        <input type="file" class="form-control" id="video_file" name="video_file" accept="video/mp4" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="thumbnail" class="form-label">Thumbnail (optional):</label>
+                        <input type="file" class="form-control" id="thumbnail" name="thumbnail" accept="image/*">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg w-100">Upload</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+ {% endblock %}
